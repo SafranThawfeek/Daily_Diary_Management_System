@@ -17,7 +17,7 @@ export default function EditNote() {
       setTitle(e.title || "");
       setDescription(e.description || "");
       setMood(e.mood || "");
-    }).catch(() => navigate('/dashboard'));
+    }).catch(() => navigate('/view-notes'));
   }, [id, navigate]);
 
   const handleSubmit = async (e) => {
@@ -26,7 +26,7 @@ export default function EditNote() {
     try {
       setLoading(true);
       await api.put(`/diary/${id}`, { title, description, mood });
-      navigate('/dashboard');
+      navigate('/view-notes');
     } catch (err) {
       alert(err.response?.data?.message || 'Failed to save note');
     } finally { setLoading(false); }
@@ -66,7 +66,7 @@ export default function EditNote() {
 
             <div className="flex gap-3">
               <button type="submit" disabled={loading} className="bg-blue-600 text-white px-8 py-2 rounded-lg font-semibold disabled:opacity-50">{loading ? 'Saving...' : 'Save'}</button>
-              <button type="button" onClick={() => navigate('/dashboard')} className="bg-gray-300 text-gray-800 px-8 py-2 rounded-lg">Cancel</button>
+              <button type="button" onClick={() => navigate('/view-notes')} className="bg-gray-300 text-gray-800 px-8 py-2 rounded-lg">Cancel</button>
             </div>
           </form>
         </div>

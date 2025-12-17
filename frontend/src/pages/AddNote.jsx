@@ -24,7 +24,7 @@ export default function AddNote() {
         mood: mood || "happy",
         date: new Date()
       });
-      nav("/dashboard");
+      nav("/view-notes");
     } catch (err) {
         console.error("Add note error:", err.response || err);
         const msg = err.response?.data?.message || err.message || 'Failed to add note';
@@ -55,14 +55,14 @@ export default function AddNote() {
             {/* Category Name Field */}
             <div>
               <label className="block text-gray-700 font-semibold mb-2">
-                Category Name
+                Mood
               </label>
               <select
                 value={mood}
                 onChange={(e) => setMood(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
-                <option value="">Select Category</option>
+                <option value="">Select Mood</option>
                 <option value="happy">Happy</option>
                 <option value="sad">Sad</option>
                 <option value="excited">Excited</option>
@@ -111,7 +111,7 @@ export default function AddNote() {
               </button>
               <button
                 type="button"
-                onClick={() => nav("/dashboard")}
+                onClick={() => nav("/view-notes")}
                 className="bg-gray-300 text-gray-800 px-8 py-2 rounded-lg font-semibold hover:bg-gray-400 transition"
               >
                 Cancel

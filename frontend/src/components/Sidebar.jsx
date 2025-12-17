@@ -27,6 +27,9 @@ export default function Sidebar() {
         <Link to="/view-notes" className="block p-2 rounded hover:bg-gray-700">
           View Notes
         </Link>
+        <Link to="/calendar" className="block p-2 rounded hover:bg-gray-700">
+          Calendar View
+        </Link>
 
         <p className="text-gray-400 mt-6">PROFILE SETTING</p>
 

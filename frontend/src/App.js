@@ -12,6 +12,7 @@ import ViewNotes from "./pages/ViewNotes";
 import TodayDetails from "./pages/TodayDetails";
 import ViewDiary from "./pages/ViewDiary";
 import EditNote from "./pages/EditNote";
+import CalendarView from "./pages/CalendarView";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/add-note" element={<AddNote />} />
           <Route path="/edit-note/:id" element={<EditNote />} />
           <Route path="/view-notes" element={<ViewNotes />} />
+          <Route path="/calendar" element={<CalendarView />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/change-password" element={<ChangePassword />} />
         </Route>

@@ -78,8 +78,8 @@ exports.getToday = async (req, res) => {
 
     const entries = await DiaryEntry.find({
       userId: req.userId,
-      date: { $gte: today, $lt: tomorrow }
-    }).sort({ date: -1 });
+      createdAt: { $gte: today, $lt: tomorrow }
+    }).sort({ createdAt: -1 });
 
     res.json(entries);
   } catch (err) {
