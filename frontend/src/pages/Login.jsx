@@ -73,12 +73,12 @@ export default function Login() {
             </div>
 
             <div className="flex items-center justify-between">
-              <button
-                type="button"
+              <Link
+                to="/forgot-password"
                 className="text-sm text-blue-600 hover:underline"
               >
                 Forgot Password?
-              </button>
+              </Link>
             </div>
 
             <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
